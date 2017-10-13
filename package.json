@@ -1,0 +1,16 @@
+{
+  "name": "byteball-devnet-witness",
+  "version": "1.0.0",
+  "description": "Custom byteball DAG",
+  "scripts": {
+    "init": "bin/init.sh",
+    "genesis": "node genesis.js",
+    "witness": "node witness.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "headless-byteball": "git+https://github.com/byteball/headless-byteball.git",
+    "byteball-witness": "git+https://github.com/byteball/byteball-witness.git"
+  }
+}
