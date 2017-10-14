@@ -44,6 +44,20 @@ The witness exposes a simplified JSON RPC endpoint on port 6612 that can be used
 $ curl --data '{"jsonrpc":"2.0", "id":1, "method":"sendtoaddress", "params":["7AAUNXYL3G5RB73TKQPCPGC6FL5RM2G6", 12345678] }' http://127.0.0.1:6612
 ```
 
+## Using with docker
+
+Building the devnet docker image:
+
+```
+$ docker build -t byteball-devnet-witness:latest .
+```
+
+Running the devnet:
+
+```
+$ docker run -it -p 6611:6611 -p 6612:6612 byteball-devnet-witness
+```
+
 ## Known issues
 
 For some reason the stable units are lagging behind by two units. So in order to make the first stable payment using the command above, 3 payment has to be sent.
