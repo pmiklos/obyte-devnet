@@ -5,6 +5,7 @@ This project provides a lightweight disposable byteball network that can be used
 * minimal storage requirement since you don't have to download the whole testnet dag which is already several gigabytes
 * you can create as many devnet DAGs you want, for example one for each project
 * you can use it for integration testing
+* very fast, configurable confirmation times
 
 Of course using the testnet has its benefits as well since that is accessible to anyone and so perfect for beta-testing.
 
