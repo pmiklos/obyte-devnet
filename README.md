@@ -16,6 +16,11 @@ Create the geneis unit (when it asks for password, press enter):
 $ npm run genesis
 ```
 
+Define blackbytes asset (when it asks for password, press enter):
+```
+$ npm run blackbytes
+```
+
 Run the witness (when it asks for password, press enter):
 ```
 $ npm run witness
