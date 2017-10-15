@@ -1,5 +1,6 @@
 exports.deviceName = 'Byteball Devnet Witness';
 exports.permanent_pairing_secret = '0000';
+exports.WS_PROTOCOL = 'ws://';
 exports.KEYS_FILENAME = 'keys.json';
 
 exports.port = 6611;
