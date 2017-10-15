@@ -12,6 +12,7 @@
   "license": "MIT",
   "dependencies": {
     "headless-byteball": "git+https://github.com/byteball/headless-byteball.git",
-    "byteball-witness": "git+https://github.com/byteball/byteball-witness.git"
+    "byteball-witness": "git+https://github.com/byteball/byteball-witness.git",
+    "byteball-explorer": "git+https://github.com/byteball/byteball-explorer.git"
   }
 }

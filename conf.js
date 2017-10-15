@@ -4,6 +4,7 @@ exports.KEYS_FILENAME = 'keys.json';
 
 exports.port = 6611;
 exports.rpcPort = '6612';
+exports.webPort = 8080; // dag explorer
 exports.bServeAsHub = true;
 exports.bLight = false;
 

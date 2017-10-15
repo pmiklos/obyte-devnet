@@ -1,5 +1,6 @@
 "use strict";
 const witness = require('byteball-witness');
+const explorer = require('byteball-explorer/explorer.js');
 const headlessWallet = require('headless-byteball');
 const eventBus = require('byteballcore/event_bus.js');
 const validationUtils = require("byteballcore/validation_utils.js");
