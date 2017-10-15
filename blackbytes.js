@@ -6,7 +6,7 @@ function onError(err){
 	throw Error(err);
 }
 
-function createAsset(address, onDone){
+function createBlackbytes(address, onDone){
 	var composer = require('byteballcore/composer.js');
 	var network = require('byteballcore/network.js');
 
@@ -51,8 +51,8 @@ function createAsset(address, onDone){
 
 eventBus.once('headless_wallet_ready', function() {
     headlessWallet.readSingleAddress(function(address) {
-        createAsset(address, function(assetHash) {
-            console.log("Blackbyte asset created: " + assetHash);
+        createBlackbytes(address, function(assetHash) {
+            console.log("Blackbytes asset created: " + assetHash);
             process.exit(0);
         });
     });

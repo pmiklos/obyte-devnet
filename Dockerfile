@@ -10,7 +10,7 @@ RUN	npm run init
 
 RUN	echo | npm run genesis
 
-RUN	echo | npm run blackbyte
+RUN	echo | npm run blackbytes
 
 EXPOSE	6611 6612
 
