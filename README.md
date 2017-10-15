@@ -1,6 +1,6 @@
 # Byteball Devnet Witness and Hub
 
-This project provides a lightweight disposable byteball network that can be used on demand per developement project. It generates a new DAG from scratch with simplified protocol for your own use. Benefits of using the devnet compared to testnet are:
+This project provides a lightweight disposable byteball network that can be used on demand for developement. It generates a new DAG from scratch with a simplified protocol for your own use. Benefits of using the devnet compared to testnet are:
 * no wait times for sychronizing the network to the latest state
 * minimal storage requirement since you don't have to download the whole testnet dag which is already several gigabytes
 * you can create as many devnet DAGs you want, for example one for each project
