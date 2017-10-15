@@ -60,12 +60,16 @@ $ docker build -t byteball-devnet-witness:latest .
 Running the devnet:
 
 ```
-$ docker run -it -p 6611:6611 -p 6612:6612 byteball-devnet-witness
+$ docker run -it -p 6611:6611 -p 6612:6612 -p 8080:8080 byteball-devnet-witness
 ```
 
 ## Timestamp Oracle
 
 The witness also acts as a timestamp oracle posting every minute by default. The Oracle's address is the same as the witness' address which is by default `ZQFHJXFWT2OCEBXF26GFXJU4MPASWPJT`. The timestamping interval can be controlled by the TIMESTAMPING_INTERVAL configuration parameter either in `conf.js` or in `~/.config/byteball-devnet-witness/conf.json`.
+
+## DAG Explorer
+
+The witness runs a DAG explorer as well which is exposed on port 8080 and so can be access at [http://localhost:8080](http://localhost:8080).
 
 ## Known issues
 
