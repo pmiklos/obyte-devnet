@@ -26,4 +26,7 @@ else
     echo "Detected compatible byteball core v$BYTEBALL_CORE_VERSION"
 fi
 
+echo "Fixing Byteball DAG explorer to update automatically"
+sed -i -e 's/new_joint/new_my_transactions/' node_modules/byteball-explorer/explorer.js
+
 echo "You can now run 'npm run genesis'"
