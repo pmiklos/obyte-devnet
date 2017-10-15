@@ -1,5 +1,19 @@
 # Byteball Devnet Witness and Hub
 
+This project provides a lightweight disposable byteball network that can be used on demand per developement project. It generates a new DAG from scratch with simplified protocol for your own use. Benefits of using the devnet compared to testnet are:
+* no wait times for sychronizing the network to the latest state
+* minimal storage requirement since you don't have to download the whole testnet dag which is already several gigabytes
+* you can create as many devnet DAGs you want, for example one for each project
+* you can use it for integration testing
+
+Of course using the testnet has its benefits as well since that is accessible to anyone and so perfect for beta-testing.
+
+The devnet protocol is simplified to a single witness so a single process can serve as an all purpose DAG:
+* exposes a hub so you can connect you development wallets
+* exposes a JSON-RPC wallet endpoint for easy coin distribution
+* exposes a DAG explorer to visualise and browse the network
+* timestamp oracle for time-bound smart contracts
+
 ## Creating the devnet
 Start with installing the dependencies:
 ```
