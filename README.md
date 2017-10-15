@@ -63,6 +63,10 @@ Running the devnet:
 $ docker run -it -p 6611:6611 -p 6612:6612 byteball-devnet-witness
 ```
 
+## Timestamp Oracle
+
+The witness also acts as a timestamp oracle posting every minute by default. The Oracle's address is the same as the witness' address which is by default `ZQFHJXFWT2OCEBXF26GFXJU4MPASWPJT`. The timestamping interval can be controlled by the TIMESTAMPING_INTERVAL configuration parameter either in `conf.js` or in `~/.config/byteball-devnet-witness/conf.json`.
+
 ## Known issues
 
 For some reason the stable units are lagging behind by two units. So in order to make the first stable payment using the command above, 3 payment has to be sent.

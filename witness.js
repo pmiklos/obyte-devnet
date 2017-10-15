@@ -40,6 +40,31 @@ function initRPC() {
 	server.listen(conf.rpcPort, conf.rpcInterface);
 }
 
+function postTimestamp(address) {
+	var composer = require('byteballcore/composer.js');
+	var network = require('byteballcore/network.js');
+	var callbacks = composer.getSavingCallbacks({
+		ifNotEnoughFunds: function(err) {
+			console.error(err);
+		},
+		ifError: function(err) {
+			console.error(err);
+		},
+		ifOk: function(objJoint) {
+			network.broadcastJoint(objJoint);
+		}
+	});
+
+	var datafeed = {
+		time: new Date().toString(),
+		timestamp: Date.now()
+	};
+	composer.composeDataFeedJoint(address, datafeed, headlessWallet.signer, callbacks);
+}
+
 eventBus.once('headless_wallet_ready', function() {
-    initRPC();
+	initRPC();
+	headlessWallet.readSingleAddress(function(address) {
+		setInterval(postTimestamp, conf.TIMESTAMPING_INTERVAL, address);
+	});
 });
