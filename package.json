@@ -5,6 +5,7 @@
   "scripts": {
     "init": "bin/init.sh",
     "genesis": "node genesis.js",
+    "blackbyte": "node blackbyte.js",
     "witness": "node witness.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

@@ -11,6 +11,7 @@ exports.version = '1.0dev';
 exports.alt = '3';
 
 exports.GENESIS_UNIT = '3gLI9EnI2xe3WJVPwRg8s4CB24ruetuddS0wYa2EI3c=';
+exports.BLACKBYTES_ASSET = 'pXDg6e1hgge/g/vCLjJZRgowm1W1EXpcHOISbP+j97A=';
 
 exports.HASH_LENGTH = 44;
 exports.PUBKEY_LENGTH = 44;
