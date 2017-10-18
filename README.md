@@ -64,7 +64,7 @@ exports.hub = 'localhost:6611';
 
 The witness exposes a simplified JSON RPC endpoint on port 6612 that can be used to send bytes and blackbytes to any wallets.
 
-In order to send blackbytes the receiving wallet has to be paired with the witness first. The pairing code by default is `AtbXPcYt2i4PwNAuf9awIYWx3aGZQb2DlUBc8wm1UhTl@localhost:6611#0000`.
+In order to send blackbytes, the receiving wallet has to be paired with the witness first. The pairing code by default is `AtbXPcYt2i4PwNAuf9awIYWx3aGZQb2DlUBc8wm1UhTl@localhost:6611#0000`. Note that before transferring blackbytes the blackbytes asset definition has to become stable. Since the timestamp oracle posts every minute, it becomes stable in about two minutes. Alternatively sending two byte transactions from the witness wallet also confirms the blackbytes definition.
 
 ### RPC sendtoaddress
 Parameters:
