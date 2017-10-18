@@ -9,8 +9,7 @@ This project provides a lightweight disposable byteball network that can be used
 
 Of course using the testnet has its benefits as well since that is accessible to anyone and so perfect for beta-testing.
 
-The devnet protocol is simplified to a single witness so a single process can serve as an all purpose DAG:
-* exposes a hub so you can connect you development wallets
+The devnet protocol is simplified to a single witness which runs multiple serives:
 * exposes a JSON-RPC wallet endpoint for easy coin distribution
 * exposes a DAG explorer to visualise and browse the network
 * timestamp oracle for time-bound smart contracts
@@ -36,7 +35,7 @@ Define blackbytes asset (when it asks for password, press enter):
 $ npm run blackbytes
 ```
 
-Start the hun
+Start the hub
 ```
 $ npm run hub
 ```
@@ -61,12 +60,31 @@ exports.WS_PROTOCOL = 'ws://';
 exports.hub = 'localhost:6611';
 ```
 
-## Distributing bytes
+## Distributing bytes and blackbytes
 
-The witness exposes a simplified JSON RPC endpoint on port 6612 that can be used to send bytes to any wallets:
+The witness exposes a simplified JSON RPC endpoint on port 6612 that can be used to send bytes and blackbytes to any wallets.
 
+In order to send blackbytes the receiving wallet has to be paired with the witness first. The pairing code by default is `AtbXPcYt2i4PwNAuf9awIYWx3aGZQb2DlUBc8wm1UhTl@localhost:6611#0000`.
+
+### RPC sendtoaddress
+Parameters:
+* `{String} address`- receving wallet address
+* `{Integer} amount` - amount in bytes
+
+Example:
 ```
 $ curl --data '{"jsonrpc":"2.0", "id":1, "method":"sendtoaddress", "params":["7AAUNXYL3G5RB73TKQPCPGC6FL5RM2G6", 12345678] }' http://127.0.0.1:6612
+```
+
+### RPC sendblackbytestoaddress
+Parameters:
+* `{String} device`- the address of the receving device
+* `{String} address`- receving wallet address
+* `{Integer} amount` - amount in bytes
+
+Example:
+```
+$ curl --data '{"jsonrpc":"2.0", "id":1, "method":"sendblackbytestoaddress", "params": ["0BN2NOKBEBZNQPKSVUZZBWAM4NF5JLQCT", "ILVKZNLAL3OEUXX4QBNDNFNRVLBZTTXO", 35000] }' http://127.0.0.1:6612
 ```
 
 ## Using with docker
@@ -74,13 +92,13 @@ $ curl --data '{"jsonrpc":"2.0", "id":1, "method":"sendtoaddress", "params":["7A
 Building the devnet docker image:
 
 ```
-$ docker build -t byteball-devnet-witness:latest .
+$ docker build -t byteball-devnet:latest .
 ```
 
 Running the devnet:
 
 ```
-$ docker run -it -p 6611:6611 -p 6612:6612 -p 8080:8080 byteball-devnet-witness
+$ docker run -it -p 6611:6611 -p 6612:6612 -p 8080:8080 byteball-devnet
 ```
 
 ## Timestamp Oracle
