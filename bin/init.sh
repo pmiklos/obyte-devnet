@@ -21,7 +21,10 @@ fi
 BYTEBALL_CORE_VERSION=`npm view byteballcore version`
 if [ "$BYTEBALL_CORE_VERSION" == "0.2.57" ]; then
     echo "Patching byteball core to support single witness:"
-    patch node_modules/byteballcore/composer.js < composer.patch
+    patch -N -r - node_modules/byteballcore/composer.js < patch/composer.js/fix-single-authored-genesis-issue-input.patch
+elif [ "$BYTEBALL_CORE_VERSION" == "0.2.58" ]; then
+    echo "Patching byteball core to fix hub/deliver message to self:"
+    patch -N -r - node_modules/byteballcore/network.js < patch/network.js/fix-hub-deliver-to-self.patch
 else
     echo "Detected compatible byteball core v$BYTEBALL_CORE_VERSION"
 fi
