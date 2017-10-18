@@ -1,18 +1,32 @@
 {
-  "name": "byteball-devnet-witness",
+  "name": "byteball-devnet",
   "version": "1.0.0",
-  "description": "Custom byteball DAG",
+  "description": "Devnet for Byteball",
+  "main": "index.js",
+  "dependencies": {
+    "byteball-devnet-hub": "file:hub",
+    "byteball-devnet-witness": "file:witness",
+    "byteball-explorer": "^0.1.0",
+    "byteball-witness": "^0.1.7",
+    "headless-byteball": "^0.1.8"
+  },
+  "devDependencies": {},
   "scripts": {
     "init": "bin/init.sh",
-    "genesis": "node genesis.js",
-    "blackbytes": "node blackbytes.js",
-    "witness": "node witness.js",
+    "genesis": "npm --prefix witness genesis",
+    "blackbytes": "npm --prefix witness blackbytes",
+    "witness": "npm --prefix witness start",
+    "hub": "npm --prefix hub start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pmiklos/byteball-devnet-witness.git"
+  },
+  "author": "",
   "license": "MIT",
-  "dependencies": {
-    "headless-byteball": "git+https://github.com/byteball/headless-byteball.git",
-    "byteball-witness": "git+https://github.com/byteball/byteball-witness.git",
-    "byteball-explorer": "git+https://github.com/byteball/byteball-explorer.git"
-  }
+  "bugs": {
+    "url": "https://github.com/pmiklos/byteball-devnet-witness/issues"
+  },
+  "homepage": "https://github.com/pmiklos/byteball-devnet-witness#readme"
 }

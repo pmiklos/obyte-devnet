@@ -1,12 +1,12 @@
 exports.deviceName = 'Byteball Devnet Witness';
 exports.permanent_pairing_secret = '0000';
 exports.WS_PROTOCOL = 'ws://';
+exports.hub = 'localhost:6611';
 exports.KEYS_FILENAME = 'keys.json';
 
-exports.port = 6611;
 exports.rpcPort = '6612';
 exports.webPort = 8080; // dag explorer
-exports.bServeAsHub = true;
+exports.bServeAsHub = false;
 exports.bLight = false;
 
 // witness configuration

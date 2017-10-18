@@ -36,7 +36,12 @@ Define blackbytes asset (when it asks for password, press enter):
 $ npm run blackbytes
 ```
 
-Run the witness (when it asks for password, press enter):
+Start the hun
+```
+$ npm run hub
+```
+
+Start the witness (when it asks for password, press enter):
 ```
 $ npm run witness
 ```
@@ -49,7 +54,7 @@ A devnet wallet must use the same byteball protocol as the witness in order to w
 $ cp config/constants.js node_modules/byteballcore/constants.js
 ```
 
-The devnet witness exposes a byteball hub on port 6611 to which wallets can connect to by setting the following parameters in the conf.js of the wallet:
+The devnet hub runs on port 6611 to which wallets can connect to by setting the following parameters in the conf.js of the wallet:
 
 ```
 exports.WS_PROTOCOL = 'ws://';

@@ -14,5 +14,5 @@ RUN	echo | npm run blackbytes
 
 EXPOSE	6611 6612
 
-CMD	[ "/bin/sh", "-c", "echo | npm run witness" ]
+CMD	[ "/bin/sh", "-c", "npm run hub > /dev/null & echo | npm run witness" ]
 
