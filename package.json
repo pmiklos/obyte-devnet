@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmiklos/byteball-devnet-witness.git"
+    "url": "git+https://github.com/pmiklos/byteball-devnet.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pmiklos/byteball-devnet-witness/issues"
+    "url": "https://github.com/pmiklos/byteball-devnet/issues"
   },
-  "homepage": "https://github.com/pmiklos/byteball-devnet-witness#readme"
+  "homepage": "https://github.com/pmiklos/byteball-devnet#readme"
 }
