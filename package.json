@@ -5,16 +5,13 @@
   "main": "index.js",
   "dependencies": {
     "byteball-devnet-hub": "file:hub",
-    "byteball-devnet-witness": "file:witness",
-    "byteball-explorer": "^0.1.0",
-    "byteball-witness": "^0.1.7",
-    "headless-byteball": "^0.1.8"
+    "byteball-devnet-witness": "file:witness"
   },
   "devDependencies": {},
   "scripts": {
     "init": "bin/init.sh",
-    "genesis": "npm --prefix witness genesis",
-    "blackbytes": "npm --prefix witness blackbytes",
+    "genesis": "npm --prefix witness run genesis",
+    "blackbytes": "npm --prefix witness run blackbytes",
     "witness": "npm --prefix witness start",
     "hub": "npm --prefix hub start",
     "test": "echo \"Error: no test specified\" && exit 1"
