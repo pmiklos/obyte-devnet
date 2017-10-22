@@ -47,7 +47,7 @@ $ npm run witness
 
 ## Connecting to the devnet
 
-A devnet wallet must use the same byteball protocol as the witness in order to work. Copy the `config/constants.js` to the `node_modules/byteballcore/` overwriting the existing constants.js:
+A devnet wallet must use the same byteball protocol as the witness in order to work. The recommended way to set up devnet is to use the [byteball-devnet-config](../../../byteball-devnet-config). Alternatively, you can copy the `config/constants.js` to the `node_modules/byteballcore/` overwriting the existing constants.js:
 
 ```
 $ cp config/constants.js node_modules/byteballcore/constants.js
