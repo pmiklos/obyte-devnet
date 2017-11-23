@@ -25,6 +25,9 @@ if [ "$BYTEBALL_CORE_VERSION" == "0.2.57" ]; then
 elif [ "$BYTEBALL_CORE_VERSION" == "0.2.58" ]; then
     echo "Patching byteball core to fix hub/deliver message to self:"
     patch -N -r - node_modules/byteballcore/network.js < patch/network.js/fix-hub-deliver-to-self.patch
+elif [ "$BYTEBALL_CORE_VERSION" == "0.2.78" ]; then
+    echo "Patching byteball core to fix witnessed level for genesis unit:"
+    patch -N -r - node_modules/byteballcore/storage.js < patch/storage.js/fix-witnessed-level-for-genesis.patch
 else
     echo "Detected compatible byteball core v$BYTEBALL_CORE_VERSION"
 fi
