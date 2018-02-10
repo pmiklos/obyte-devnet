@@ -10,3 +10,7 @@ exports.bLight = false;
 exports.initial_witnesses = [
 	'ZQFHJXFWT2OCEBXF26GFXJU4MPASWPJT'
 ];
+
+exports.trustedRegistries = [
+    'ZQFHJXFWT2OCEBXF26GFXJU4MPASWPJT'
+];
