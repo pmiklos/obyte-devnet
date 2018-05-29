@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "byteball-devnet.name" . }}-witness
+  labels:
+    app: {{ template "byteball-devnet.name" . }}-witness
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "byteball-devnet.name" . }}-witness
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "byteball-devnet.name" . }}-witness
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 6612
+          name: jsonrpc
+        - containerPort: 8080
+          name: http
+        command: ["/bin/sh"]
+        args: ["-c", "echo | npm run witness"]

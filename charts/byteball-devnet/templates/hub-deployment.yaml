@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "byteball-devnet.name" . }}-hub
+  labels:
+    app: {{ template "byteball-devnet.name" . }}-hub
+    release: {{ .Release.Name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "byteball-devnet.name" . }}-hub
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "byteball-devnet.name" . }}-hub
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 6611
+          name: ws
+        command: ["/bin/sh"]
+        args: ["-c", "npm run hub"]

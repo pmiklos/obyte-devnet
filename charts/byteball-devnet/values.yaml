@@ -1,0 +1,4 @@
+image:
+  repository: pmiklos/byteball-devnet
+  tag: 0.2.78
+  pullPolicy: IfNotPresent
