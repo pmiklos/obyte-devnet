@@ -1,3 +1,4 @@
+{{- if and .Values.persistence.enabled (not .Values.persistence.existingClaim) }}
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -5,6 +6,8 @@ metadata:
   chart: {{ template "byteball-devnet.chart" . }}
   release: {{ .Release.Name }}
   heritage: {{ .Release.Service }}
+  annotations:
+    "helm.sh/resource-policy": keep
 spec:
   capacity:
     storage: {{ .Values.persistence.size | quote }}
@@ -14,3 +17,4 @@ spec:
   hostPath:
     path: /data/volumes/byteball-devnet
     type: DirectoryOrCreate
+{{- end }}
