@@ -3,22 +3,26 @@ kind: Deployment
 metadata:
   name: {{ template "byteball-devnet.name" . }}-witness
   labels:
-    app: {{ template "byteball-devnet.name" . }}-witness
+    app: {{ template "byteball-devnet.name" . }}
+    chart: {{ template "byteball-devnet.chart" . }}
     release: {{ .Release.Name }}
+    component: witness
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ template "byteball-devnet.name" . }}-witness
+      app: {{ template "byteball-devnet.name" . }}
       release: {{ .Release.Name }}
+      component: witness
   template:
     metadata:
       labels:
-        app: {{ template "byteball-devnet.name" . }}-witness
+        app: {{ template "byteball-devnet.name" . }}
         release: {{ .Release.Name }}
+        component: witness
     spec:
       containers:
-      - name: {{ .Chart.Name }}
+      - name: witness
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
@@ -28,3 +32,14 @@ spec:
           name: http
         command: ["/bin/sh"]
         args: ["-c", "echo | npm run witness"]
+        volumeMounts:
+          - name: data
+            mountPath: /root/.config
+      volumes:
+        - name: data
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "byteball-devnet.fullname" .) }}
+        {{- else }}
+          emptyDir: {}
+        {{- end -}}

@@ -5,6 +5,7 @@ metadata:
   chart: {{ template "byteball-devnet.chart" . }}
   release: {{ .Release.Name }}
   heritage: {{ .Release.Service }}
+  component: witness
 spec:
   type: ClusterIP
   ports:
@@ -15,5 +16,6 @@ spec:
     port: 8080
     targetPort: 8080
   selector:
-    app: {{ template "byteball-devnet.name" . }}-witness
+    app: {{ template "byteball-devnet.name" . }}
     release: {{ .Release.Name }}
+    component: witness
