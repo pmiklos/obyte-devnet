@@ -2,7 +2,7 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "byteball-devnet.fullname" . }}
+  name: {{ template "byteball-devnet.name" . }}
   annotations:
     "helm.sh/resource-policy": keep
   labels:
