@@ -24,7 +24,7 @@ spec:
       initContainers:
         - name: copy-config
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: ['sh', '-c', 'npm run init; echo | npm run genesis; echo | npm run blackbytes; cp -v /configmap/conf.json /root/.config/byteball-devnet-witness/']
+          command: ['sh', '-c', 'test -d /root/.config/byteball-devnet-witness || ( npm run init && echo | npm run genesis && echo | npm run blackbytes && cp -v /configmap/conf.json /root/.config/byteball-devnet-witness/ )']
           volumeMounts:
             - name: configmap
               mountPath: /configmap
