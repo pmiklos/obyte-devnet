@@ -17,11 +17,3 @@ persistence:
   # storageClass: "-"
   accessMode: ReadWriteOnce
   size: 1Gi
-
-witness:
-  configuration:
-    conf.json: |-
-      {
-        "deviceName": "Byteball Devnet Witness",
-        "hub": "byteball-devnet-hub:6611"
-      }

@@ -9,4 +9,8 @@ metadata:
     heritage: {{ .Release.Service }}
     component: witness
 data:
-{{ toYaml .Values.witness.configuration | indent 2 }}
+  conf.json: |-
+    {
+      "deviceName": "Byteball Devnet Witness",
+      "hub": "{{ template "byteball-devnet.fullname" . }}-hub:6611"
+    }

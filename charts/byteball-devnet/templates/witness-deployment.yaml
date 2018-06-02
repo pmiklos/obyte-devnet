@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "byteball-devnet.name" . }}-witness
+  name: {{ template "byteball-devnet.fullname" . }}-witness
   labels:
     app: {{ template "byteball-devnet.name" . }}
     chart: {{ template "byteball-devnet.chart" . }}
@@ -51,7 +51,7 @@ spec:
         - name: data
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "byteball-devnet.name" .) }}
+            claimName: {{ .Values.persistence.existingClaim | default (include "byteball-devnet.fullname" .) }}
         {{- else }}
           emptyDir: {}
         {{- end -}}
