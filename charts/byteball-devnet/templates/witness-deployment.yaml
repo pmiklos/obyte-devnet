@@ -47,7 +47,7 @@ spec:
       volumes:
         - name: configmap
           configMap:
-            name: {{ template "byteball-devnet.fullname" . }}
+            name: {{ template "byteball-devnet.fullname" . }}-witness
         - name: data
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
