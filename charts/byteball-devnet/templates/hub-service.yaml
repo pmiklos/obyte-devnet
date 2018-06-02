@@ -2,10 +2,11 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ template "byteball-devnet.name" . }}-hub
-  chart: {{ template "byteball-devnet.chart" . }}
-  release: {{ .Release.Name }}
-  heritage: {{ .Release.Service }}
-  component: hub
+  labels:
+    chart: {{ template "byteball-devnet.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: hub
 spec:
   type: ClusterIP
   ports:

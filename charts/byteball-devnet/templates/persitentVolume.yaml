@@ -3,11 +3,12 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: {{ template "byteball-devnet.name" . }}
-  chart: {{ template "byteball-devnet.chart" . }}
-  release: {{ .Release.Name }}
-  heritage: {{ .Release.Service }}
   annotations:
     "helm.sh/resource-policy": keep
+  labels:
+    chart: {{ template "byteball-devnet.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
 spec:
   capacity:
     storage: {{ .Values.persistence.size | quote }}
