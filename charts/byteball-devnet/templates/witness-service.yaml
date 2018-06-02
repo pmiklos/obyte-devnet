@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "byteball-devnet.fullname" . }}-witness
+  labels:
+    chart: {{ template "byteball-devnet.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: witness
+spec:
+  type: ClusterIP
+  ports:
+  - name: rpc
+    port: 6612
+    targetPort: 6612
+  - name: explorer
+    port: 8080
+    targetPort: 8080
+  selector:
+    app: {{ template "byteball-devnet.name" . }}
+    release: {{ .Release.Name }}
+    component: witness

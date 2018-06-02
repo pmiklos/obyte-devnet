@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "byteball-devnet.fullname" . }}-hub
+  labels:
+    app: {{ template "byteball-devnet.name" . }}
+    chart: {{ template "byteball-devnet.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: hub
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "byteball-devnet.name" . }}
+      release: {{ .Release.Name }}
+      component: hub
+  template:
+    metadata:
+      labels:
+        app: {{ template "byteball-devnet.name" . }}
+        release: {{ .Release.Name }}
+        component: hub
+    spec:
+      containers:
+      - name: hub
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 6611
+          name: ws
+        command: ["/bin/sh"]
+        args: ["-c", "npm run hub"]
+        volumeMounts:
+          - name: data
+            mountPath: /root/.config
+      volumes:
+        - name: data
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "byteball-devnet.fullname" .) }}
+        {{- else }}
+          emptyDir: {}
+        {{- end -}}

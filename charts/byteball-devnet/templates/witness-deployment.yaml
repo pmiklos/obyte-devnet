@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "byteball-devnet.fullname" . }}-witness
+  labels:
+    app: {{ template "byteball-devnet.name" . }}
+    chart: {{ template "byteball-devnet.chart" . }}
+    release: {{ .Release.Name }}
+    component: witness
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "byteball-devnet.name" . }}
+      release: {{ .Release.Name }}
+      component: witness
+  template:
+    metadata:
+      labels:
+        app: {{ template "byteball-devnet.name" . }}
+        release: {{ .Release.Name }}
+        component: witness
+    spec:
+      initContainers:
+        - name: copy-config
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          command: ['sh', '-c', 'test -d /root/.config/byteball-devnet-witness || ( npm run init && echo | npm run genesis && echo | npm run blackbytes && cp -v /configmap/conf.json /root/.config/byteball-devnet-witness/ )']
+          volumeMounts:
+            - name: configmap
+              mountPath: /configmap
+            - name: data
+              mountPath: /root/.config
+      containers:
+      - name: witness
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
+        ports:
+        - containerPort: 6612
+          name: jsonrpc
+        - containerPort: 8080
+          name: http
+        command: ["/bin/sh"]
+        args: ["-c", "echo | npm run witness"]
+        volumeMounts:
+          - name: data
+            mountPath: /root/.config
+      volumes:
+        - name: configmap
+          configMap:
+            name: {{ template "byteball-devnet.fullname" . }}-witness
+        - name: data
+        {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "byteball-devnet.fullname" .) }}
+        {{- else }}
+          emptyDir: {}
+        {{- end -}}
