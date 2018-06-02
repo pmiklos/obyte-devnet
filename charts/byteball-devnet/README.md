@@ -46,7 +46,7 @@ Parameter                  | Description                        | Default
 `image.pullPolicy`         | Image pull policy                  | `IfNotPresent`
 `persistence.enabled`      | Create a volume to store data      | `true`
 `persistence.accessMode`   | ReadWriteOnce or ReadOnly          | `ReadWriteOnce`
-`persistence.size`         | Size of persistent volume claim    | `300Gi`
+`persistence.size`         | Size of persistent volume claim    | `1Gi`
 `persistence.storageClass` | Persistent volume storage class    |
 `persistence.existingClaim`| Name of existing persistent volume |
 `witness.configuration`    | Config file ConfigMap entry        |
