@@ -3,6 +3,9 @@ image:
   tag: 0.2.78
   pullPolicy: IfNotPresent
 
+service: {}
+  # externalIPs exposes the hub and witness ports to external IP address
+
 persistence:
   enabled: true
   # existingClaim an existing Persistent Volume Claim to reuse

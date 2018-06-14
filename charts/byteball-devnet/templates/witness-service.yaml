@@ -20,3 +20,7 @@ spec:
     app: {{ template "byteball-devnet.name" . }}
     release: {{ .Release.Name }}
     component: witness
+  {{- with .Values.service.externalIPs }}
+  externalIPs:
+{{ toYaml . | indent 2 }}
+  {{- end }}
