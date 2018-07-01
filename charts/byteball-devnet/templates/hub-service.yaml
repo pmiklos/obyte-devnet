@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: {{ template "byteball-devnet.fullname" . }}-hub
   labels:
+    app: {{ template "byteball-devnet.name" . }}
     chart: {{ template "byteball-devnet.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
