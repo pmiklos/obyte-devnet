@@ -1,4 +1,4 @@
-exports.deviceName = 'Byteball Devnet Witness';
+exports.deviceName = 'Obyte Devnet Witness';
 exports.permanent_pairing_secret = '0000';
 exports.WS_PROTOCOL = 'ws://';
 exports.hub = 'localhost:6611';
@@ -21,3 +21,10 @@ exports.from_email='witness';
 exports.initial_witnesses = [
 	'ZQFHJXFWT2OCEBXF26GFXJU4MPASWPJT'
 ];
+
+exports.selectedLanguage="en";
+exports.languagesAvailable = {
+    en: {name: "English", file: "en"},
+    da: {name: "Dansk", file: "explorer_da-DK"},
+    zh: {name: "中文", file: "explorer_zh-CN"}
+};

@@ -1,5 +1,5 @@
 {
-  "name": "byteball-devnet-hub",
+  "name": "obyte-devnet-hub",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "byteball-hub": "git+https://github.com/byteball/byteball-hub.git"
+    "obyte-hub": "git+https://github.com/byteball/obyte-hub.git"
   }
 }

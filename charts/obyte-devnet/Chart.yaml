@@ -1,0 +1,13 @@
+apiVersion: v1
+name: obyte-devnet
+version: 1.0.0
+description: Obyte network from scratch for development purposes
+keywords:
+  - obyte
+  - cryptocurrency
+sources:
+  - https://github.com/pmiklos/obyte-devnet
+maintainers:
+  - name: Peter Miklos
+appVersion: 0.2.94
+icon: https://wiki.obyte.org/mediawiki/images/4/47/Obyte-logo.jpg

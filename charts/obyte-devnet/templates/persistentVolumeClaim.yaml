@@ -2,12 +2,12 @@
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
-  name: {{ template "byteball-devnet.fullname" . }}
+  name: {{ template "obyte-devnet.fullname" . }}
   annotations:
     "helm.sh/resource-policy": keep
   labels:
-    app: {{ template "byteball-devnet.name" . }}
-    chart: {{ template "byteball-devnet.chart" . }}
+    app: {{ template "obyte-devnet.name" . }}
+    chart: {{ template "obyte-devnet.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:

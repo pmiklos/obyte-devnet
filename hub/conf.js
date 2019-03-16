@@ -1,4 +1,4 @@
-exports.deviceName = 'Byteball Devnet Hub';
+exports.deviceName = 'Obyte Devnet Hub';
 exports.permanent_pairing_secret = '0000';
 exports.WS_PROTOCOL = 'ws://';
 exports.KEYS_FILENAME = 'keys.json';

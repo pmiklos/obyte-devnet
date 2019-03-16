@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "obyte-devnet.fullname" . }}-witness
+  labels:
+    app: {{ template "obyte-devnet.name" . }}
+    chart: {{ template "obyte-devnet.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+    component: witness
+data:
+  conf.json: |-
+    {
+      "deviceName": "Obyte Devnet Witness",
+      "hub": "{{ template "obyte-devnet.fullname" . }}-hub:6611"
+    }

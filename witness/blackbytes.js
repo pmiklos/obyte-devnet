@@ -1,14 +1,14 @@
 "use strict";
-const headlessWallet = require('headless-byteball');
-const eventBus = require('byteballcore/event_bus.js');
+const headlessWallet = require('headless-obyte');
+const eventBus = require('ocore/event_bus.js');
 
 function onError(err){
 	throw Error(err);
 }
 
 function createBlackbytes(address, onDone){
-	var composer = require('byteballcore/composer.js');
-	var network = require('byteballcore/network.js');
+	var composer = require('ocore/composer.js');
+	var network = require('ocore/network.js');
 
 	var callbacks = composer.getSavingCallbacks({
 		ifNotEnoughFunds: onError,

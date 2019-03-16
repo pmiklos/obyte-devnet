@@ -1,16 +1,16 @@
 "use strict";
-const db = require('byteballcore/db.js');
-const headlessWallet = require('headless-byteball');
-const eventBus = require('byteballcore/event_bus.js');
-const constants = require('byteballcore/constants.js');
+const db = require('ocore/db.js');
+const headlessWallet = require('headless-obyte');
+const eventBus = require('ocore/event_bus.js');
+const constants = require('ocore/constants.js');
 
 function onError(err) {
     throw Error(err);
 }
 
 function createGenesisUnit(witness, onDone) {
-    var composer = require('byteballcore/composer.js');
-    var network = require('byteballcore/network.js');
+    var composer = require('ocore/composer.js');
+    var network = require('ocore/network.js');
 
     var savingCallbacks = composer.getSavingCallbacks({
         ifNotEnoughFunds: onError,
