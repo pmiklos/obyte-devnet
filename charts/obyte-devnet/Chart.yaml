@@ -9,5 +9,5 @@ sources:
   - https://github.com/pmiklos/obyte-devnet
 maintainers:
   - name: Peter Miklos
-appVersion: 0.2.78
+appVersion: 0.2.94
 icon: https://wiki.obyte.org/mediawiki/images/4/47/Obyte-logo.jpg

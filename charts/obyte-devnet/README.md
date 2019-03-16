@@ -42,7 +42,7 @@ The following table lists the configurable parameters of the obyte-devnet chart 
 Parameter                  | Description                        | Default
 -----------------------    | ---------------------------------- | ----------------------------------------------------------
 `image.repository`         | Image source repository name       | `pmiklos/obyte-devnet`
-`image.tag`                | `obyte-devnet` release tag.     | `0.2.78`
+`image.tag`                | `obyte-devnet` release tag.     | `0.2.94`
 `image.pullPolicy`         | Image pull policy                  | `IfNotPresent`
 `persistence.enabled`      | Create a volume to store data      | `true`
 `persistence.accessMode`   | ReadWriteOnce or ReadOnly          | `ReadWriteOnce`
