@@ -1,12 +1,12 @@
 "use strict";
-require("byteballcore/wallet.js");
-const witness = require('byteball-witness');
-const explorer = require('byteball-explorer/explorer.js');
-const headlessWallet = require('headless-byteball');
-const eventBus = require('byteballcore/event_bus.js');
-const validationUtils = require("byteballcore/validation_utils.js");
-const conf = require('byteballcore/conf.js');
-const constants = require('byteballcore/constants.js');
+require("ocore/wallet.js");
+const witness = require('obyte-witness');
+const explorer = require('obyte-explorer/explorer.js');
+const headlessWallet = require('headless-obyte');
+const eventBus = require('ocore/event_bus.js');
+const validationUtils = require("ocore/validation_utils.js");
+const conf = require('ocore/conf.js');
+const constants = require('ocore/constants.js');
 
 function initRPC() {
 	var rpc = require('json-rpc2');
@@ -76,9 +76,9 @@ function initRPC() {
 }
 
 function createIndivisibleAssetPayment(asset, amount, fromAddress, toAddress, toDevice, callback) {
-	var network = require('byteballcore/network.js');
-	var indivisibleAsset = require('byteballcore/indivisible_asset.js');
-	var walletGeneral = require('byteballcore/wallet_general.js');
+	var network = require('ocore/network.js');
+	var indivisibleAsset = require('ocore/indivisible_asset.js');
+	var walletGeneral = require('ocore/wallet_general.js');
 
 	indivisibleAsset.composeAndSaveIndivisibleAssetPaymentJoint({
 		asset: asset,
@@ -105,8 +105,8 @@ function createIndivisibleAssetPayment(asset, amount, fromAddress, toAddress, to
 }
 
 function postTimestamp(address) {
-	var composer = require('byteballcore/composer.js');
-	var network = require('byteballcore/network.js');
+	var composer = require('ocore/composer.js');
+	var network = require('ocore/network.js');
 	var callbacks = composer.getSavingCallbacks({
 		ifNotEnoughFunds: function(err) {
 			console.error(err);
@@ -135,6 +135,6 @@ eventBus.once('headless_wallet_ready', function() {
 
 eventBus.on('paired', function(from_address) {
     console.log('Sucessfully paired with:' + from_address);
-    const device = require('byteballcore/device.js');
+    const device = require('ocore/device.js');
     device.sendMessageToDevice(from_address, "text", "Welcome to devnet Witness!");
 });

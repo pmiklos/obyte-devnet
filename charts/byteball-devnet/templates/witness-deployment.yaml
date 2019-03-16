@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "byteball-devnet.fullname" . }}-witness
+  name: {{ template "obyte-devnet.fullname" . }}-witness
   labels:
-    app: {{ template "byteball-devnet.name" . }}
-    chart: {{ template "byteball-devnet.chart" . }}
+    app: {{ template "obyte-devnet.name" . }}
+    chart: {{ template "obyte-devnet.chart" . }}
     release: {{ .Release.Name }}
     component: witness
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: {{ template "byteball-devnet.name" . }}
+      app: {{ template "obyte-devnet.name" . }}
       release: {{ .Release.Name }}
       component: witness
   template:
     metadata:
       labels:
-        app: {{ template "byteball-devnet.name" . }}
+        app: {{ template "obyte-devnet.name" . }}
         release: {{ .Release.Name }}
         component: witness
     spec:
       initContainers:
         - name: copy-config
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          command: ['sh', '-c', 'test -d /root/.config/byteball-devnet-witness || ( npm run init && echo | npm run genesis && echo | npm run blackbytes && cp -v /configmap/conf.json /root/.config/byteball-devnet-witness/ )']
+          command: ['sh', '-c', 'test -d /root/.config/obyte-devnet-witness || ( npm run init && echo | npm run genesis && echo | npm run blackbytes && cp -v /configmap/conf.json /root/.config/obyte-devnet-witness/ )']
           volumeMounts:
             - name: configmap
               mountPath: /configmap
@@ -47,11 +47,11 @@ spec:
       volumes:
         - name: configmap
           configMap:
-            name: {{ template "byteball-devnet.fullname" . }}-witness
+            name: {{ template "obyte-devnet.fullname" . }}-witness
         - name: data
         {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.existingClaim | default (include "byteball-devnet.fullname" .) }}
+            claimName: {{ .Values.persistence.existingClaim | default (include "obyte-devnet.fullname" .) }}
         {{- else }}
           emptyDir: {}
         {{- end -}}

@@ -1,5 +1,5 @@
 image:
-  repository: pmiklos/byteball-devnet
+  repository: pmiklos/obyte-devnet
   tag: 0.2.78
   pullPolicy: IfNotPresent
 
@@ -9,7 +9,7 @@ service: {}
 persistence:
   enabled: true
   # existingClaim an existing Persistent Volume Claim to reuse
-  # existingClaim: "byteball-devnet"
+  # existingClaim: "obyte-devnet"
   #
   # storageClass Persistent Volume Storage Class
   # If defined, storageClassName: <storageClass>

@@ -1,7 +1,7 @@
 {
-  "name": "byteball-devnet-witness",
+  "name": "obyte-devnet-witness",
   "version": "1.0.0",
-  "description": "Custom byteball DAG",
+  "description": "Custom Obyte DAG",
   "main": "server.js",
   "scripts": {
     "init": "bin/init.sh",
@@ -11,8 +11,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "headless-byteball": "git+https://github.com/byteball/headless-byteball.git",
-    "byteball-witness": "git+https://github.com/byteball/byteball-witness.git",
-    "byteball-explorer": "git+https://github.com/byteball/byteball-explorer.git"
+    "headless-obyte": "git+https://github.com/byteball/headless-obyte.git",
+    "obyte-witness": "git+https://github.com/byteball/obyte-witness.git",
+    "obyte-explorer": "git+https://github.com/byteball/obyte-explorer.git"
   }
 }

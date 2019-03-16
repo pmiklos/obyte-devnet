@@ -1,2 +1,2 @@
 "use strict";
-require('byteball-hub');
+require('obyte-hub');

@@ -1,11 +1,11 @@
 {
-  "name": "byteball-devnet",
+  "name": "obyte-devnet",
   "version": "1.0.0",
-  "description": "Devnet for Byteball",
+  "description": "Devnet for Obyte",
   "main": "index.js",
   "dependencies": {
-    "byteball-devnet-hub": "file:hub",
-    "byteball-devnet-witness": "file:witness"
+    "obyte-devnet-hub": "file:hub",
+    "obyte-devnet-witness": "file:witness"
   },
   "devDependencies": {},
   "scripts": {
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pmiklos/byteball-devnet.git"
+    "url": "git+https://github.com/pmiklos/obyte-devnet.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pmiklos/byteball-devnet/issues"
+    "url": "https://github.com/pmiklos/obyte-devnet/issues"
   },
-  "homepage": "https://github.com/pmiklos/byteball-devnet#readme"
+  "homepage": "https://github.com/pmiklos/obyte-devnet#readme"
 }
