@@ -9,8 +9,11 @@ exports.COUNT_MC_BALLS_FOR_PAID_WITNESSING = 100;
 
 console.log('===== devnet ====== ');
 
-exports.version = '1.0dev';
+exports.version = '2.0dev';
 exports.alt = '3';
+
+exports.supported_versions = ['2.0dev', '1.0dev'];
+exports.versionWithoutTimestamp = '1.0dev';
 
 exports.GENESIS_UNIT = '3gLI9EnI2xe3WJVPwRg8s4CB24ruetuddS0wYa2EI3c=';
 exports.BLACKBYTES_ASSET = 'pXDg6e1hgge/g/vCLjJZRgowm1W1EXpcHOISbP+j97A=';
@@ -47,7 +50,8 @@ exports.TEXTCOIN_ASSET_CLAIM_MESSAGE_FEE = 209;
 exports.TEXTCOIN_ASSET_CLAIM_BASE_MSG_FEE = 158;
 exports.TEXTCOIN_PRIVATE_ASSET_CLAIM_MESSAGE_FEE = 99;
 
-exports.minCoreVersion = exports.bTestnet ? '0.2.94' : '0.2.92';
+exports.minCoreVersion = '0.2.95';
+exports.minCoreVersionForFullNodes = '0.2.95';
 
 exports.lastBallStableInParentsUpgradeMci = 1300000;
 exports.witnessedLevelMustNotRetreatUpgradeMci = exports.bTestnet ? 684000 : 1400000;
@@ -58,3 +62,5 @@ exports.attestedInDefinitionUpgradeMci = exports.bTestnet ? 616000 : 2909000;
 exports.altBranchByBestParentUpgradeMci = exports.bTestnet ? 642000 : 3009824;
 exports.anyDefinitionChangeUpgradeMci = exports.bTestnet ? 855000 : Infinity;
 exports.formulaUpgradeMci = exports.bTestnet ? Infinity : Infinity;
+exports.witnessedLevelMustNotRetreatFromAllParentsUpgradeMci = Infinity;
+exports.timestampUpgradeMci = Infinity;
