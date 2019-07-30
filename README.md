@@ -47,7 +47,7 @@ $ npm run witness
 
 ## Connecting to the devnet
 
-The devnet hub runs on port 6611 to which wallets can connect to by placing a `.env` file with the following contents:
+The devnet hub runs on port 6611 to which wallets can connect to by placing a `.env` file in the project root with the following contents:
 
 ```
 devnet=1
