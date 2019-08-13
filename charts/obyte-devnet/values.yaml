@@ -1,6 +1,6 @@
 image:
   repository: pmiklos/obyte-devnet
-  tag: 0.2.94
+  tag: 0.3.0-aa
   pullPolicy: IfNotPresent
 
 service: {}
