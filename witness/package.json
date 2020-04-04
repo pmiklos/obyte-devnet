@@ -11,8 +11,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "headless-obyte": "git+https://github.com/byteball/headless-obyte.git#aa",
-    "obyte-witness": "git+https://github.com/byteball/obyte-witness.git#aa",
-    "obyte-explorer": "git+https://github.com/byteball/obyte-explorer.git#aa"
+    "headless-obyte": "git+https://github.com/byteball/headless-obyte.git",
+    "obyte-witness": "git+https://github.com/byteball/obyte-witness.git",
+    "obyte-explorer": "git+https://github.com/byteball/obyte-explorer.git"
   }
 }

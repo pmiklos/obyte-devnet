@@ -9,6 +9,6 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "obyte-hub": "git+https://github.com/byteball/obyte-hub.git#aa"
+    "obyte-hub": "git+https://github.com/byteball/obyte-hub.git"
   }
 }
