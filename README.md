@@ -47,17 +47,10 @@ $ npm run witness
 
 ## Connecting to the devnet
 
-A devnet wallet must use the same obyte protocol as the witness in order to work. The recommended way to set up devnet is to use the [obyte-devnet-config](../../../obyte-devnet-config). Alternatively, you can copy the `config/constants.js` to the `node_modules/ocore/` overwriting the existing constants.js:
+The devnet hub runs on port 6611 to which wallets can connect to by placing a `.env` file in the project root with the following contents:
 
 ```
-$ cp config/constants.js node_modules/ocore/constants.js
-```
-
-The devnet hub runs on port 6611 to which wallets can connect to by setting the following parameters in the conf.js of the wallet:
-
-```
-exports.WS_PROTOCOL = 'ws://';
-exports.hub = 'localhost:6611';
+devnet=1
 ```
 
 ## Distributing bytes and blackbytes

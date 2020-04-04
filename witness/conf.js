@@ -28,3 +28,6 @@ exports.languagesAvailable = {
     da: {name: "Dansk", file: "explorer_da-DK"},
     zh: {name: "中文", file: "explorer_zh-CN"}
 };
+
+// explorer configuration
+exports.aaResponsesListed = 10;
