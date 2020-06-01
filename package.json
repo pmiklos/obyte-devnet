@@ -4,12 +4,13 @@
   "description": "Devnet for Obyte",
   "main": "index.js",
   "dependencies": {
+    "copy-dir": "^1.3.0",
     "obyte-devnet-hub": "file:hub",
     "obyte-devnet-witness": "file:witness"
   },
   "devDependencies": {},
   "scripts": {
-    "init": "bin/init.sh",
+    "init": "node bin/init.js",
     "genesis": "npm --prefix witness run genesis",
     "blackbytes": "npm --prefix witness run blackbytes",
     "witness": "npm --prefix witness start",
