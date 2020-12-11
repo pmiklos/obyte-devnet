@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROJECT="obyte-devnet-witness"
-CONFDIR="$HOME/.config"
+CONFDIR="$HOME/Library/Application Support"
 #CONFDIR="$HOME/Library/Application Support" #for macOS
 
 if [ -d "$CONFDIR/$PROJECT" ]; then

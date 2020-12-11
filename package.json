@@ -27,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/pmiklos/obyte-devnet/issues"
   },
-  "homepage": "https://github.com/pmiklos/obyte-devnet#readme"
+  "homepage": "https://github.com/pmiklos/obyte-devnet#readme",
+  "resolutions": {
+    "level-rocksdb": "^4.0.0"
+  }
 }

@@ -17,7 +17,7 @@ The devnet protocol is simplified to a single witness which runs multiple serive
 ## Creating the devnet
 Start with installing the dependencies:
 ```
-$ npm install
+$ yarn install
 ```
 
 Initialize devnet configuration and network protocol:

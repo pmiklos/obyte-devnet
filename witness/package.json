@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "init": "bin/init.sh",
-    "genesis": "node genesis.js",
-    "blackbytes": "node blackbytes.js",
+    "genesis": "node --preserve-symlinks genesis.js",
+    "blackbytes": "node --preserve-symlinks blackbytes.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "license": "MIT",

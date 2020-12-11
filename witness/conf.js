@@ -33,3 +33,6 @@ exports.languagesAvailable = {
 
 // explorer configuration
 exports.aaResponsesListed = 10;
+exports.initial_peers = [
+	'wss://arbregistry.ngrok.io'
+];
