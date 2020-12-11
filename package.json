@@ -4,6 +4,7 @@
   "description": "Devnet for Obyte",
   "main": "index.js",
   "dependencies": {
+    "concurrently": "^5.2.0",
     "obyte-devnet-hub": "file:hub",
     "obyte-devnet-witness": "file:witness"
   },
@@ -14,7 +15,8 @@
     "blackbytes": "npm --prefix witness run blackbytes",
     "witness": "npm --prefix witness start",
     "hub": "npm --prefix hub start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently npm:hub npm:witness"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
   "bugs": {
     "url": "https://github.com/pmiklos/obyte-devnet/issues"
   },
-  "homepage": "https://github.com/pmiklos/obyte-devnet#readme"
+  "homepage": "https://github.com/pmiklos/obyte-devnet#readme",
+  "resolutions": {
+    "level-rocksdb": "^4.0.0"
+  }
 }

@@ -1,13 +1,14 @@
 #!/bin/bash
 
 PROJECT="obyte-devnet-witness"
-CONFDIR="$HOME/.config"
+CONFDIR="$HOME/Library/Application Support"
+#CONFDIR="$HOME/Library/Application Support" #for macOS
 
 if [ -d "$CONFDIR/$PROJECT" ]; then
     echo "Configuration directory already exists."
 else
     echo "Creating configuration directory with default keys:"
-    cp -vr config/$PROJECT $CONFDIR/
+    cp -vr "config/$PROJECT" "$CONFDIR/"
 fi
 
 echo "Fixing Obyte DAG explorer to update automatically"
